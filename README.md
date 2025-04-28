@@ -1,20 +1,25 @@
+https://handsonreact.com/docs/react-typescript
+https://react.dev/learn
+
 # -ReactJS-LearningJouney
 Personal journey into learning React. From the basics to building real-world components and projects — experimenting, failing, and learning one commit at a time.
 
-Créer un projet React avec Vite
+# Créer un projet React avec Vite
 npm create vite@latest . -- --template react
 npm install
 👉 Si tu veux utiliser TypeScript avec Vite :
 npm create vite@latest . -- --template react-ts
 npm install
 
-Créer un projet React avec Create React App (CRA)
+# Créer un projet React avec Create React App (CRA)
 npx create-react-app .
 npm install
 
 👉 Avec TypeScript :
 npx create-react-app . --template typescript
 npm install
+
+# CRA vs Vite
 
 🔹 CRA (Create React App) :
 👍 Parfait pour débuter avec React sans se poser de questions.
@@ -31,3 +36,9 @@ npm install
 🧪 Plus moderne et utilisé de plus en plus dans les nouveaux projets.
 
 ✨ Très apprécié dans l’écosystème React + TypeScript + Tailwind.
+
+# Ce projet 
+ce projet utilisera CRA avec TypeSript
+
+npx create-react-app . --template typescript
+npm start 
