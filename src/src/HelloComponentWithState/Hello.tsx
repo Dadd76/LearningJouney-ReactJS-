@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 
 export interface Props {
   name: string;
@@ -15,7 +15,10 @@ class HelloCompWithState extends React.Component<Props, State> {
   onIncrement = () => {
     this.updateEnthusiasm(1);
   };
-  onDecrement = () => {
+  
+  onDecrement = (event: SyntheticEvent) => {
+    console.log(event.target);
+    console.log(event);
     this.updateEnthusiasm(-1);
   };
 

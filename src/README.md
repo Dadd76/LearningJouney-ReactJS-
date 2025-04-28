@@ -44,3 +44,39 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+#### Event / SyntheticEvent
+
+1. Avec (event: SyntheticEvent) => { ... }
+onIncrement = (event: SyntheticEvent) => {
+  console.log(event);
+  this.updateEnthusiasm(1);
+};
+
+Ici, ta fonction attend explicitement un argument qui est un événement React (SyntheticEvent).
+
+Tu peux utiliser cet event si tu veux accéder :
+À la source de l'événement (event.target)
+À ses propriétés (event.preventDefault(), event.stopPropagation(), etc.)
+TypeScript type cet événement → meilleure auto-complétion et sécurité.
+Obligatoire si tu veux manipuler l'événement directement.
+
+2. Sans paramètre ( ) => { ... }
+onIncrement = () => {
+  this.updateEnthusiasm(1);
+};
+
+Ici, la fonction n’attend pas de paramètre.
+
+Elle ignore complètement l'événement qui a déclenché l'appel.
+Très bien si tu n’as pas besoin de l'event.
+Plus simple, plus propre quand tu n'utilises que des actions internes (comme updateEnthusiasm).
+
+🎯 Quand choisir l'un ou l'autre ?
+
+Cas	Solution idéale
+Tu veux accéder à event.target, faire preventDefault(), etc.	(event: SyntheticEvent) => {...}
+Tu veux juste réagir sans utiliser l'event	() => {...}
+
+
